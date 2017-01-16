@@ -12,6 +12,7 @@ class Consumer implements CSProcess {
     def i = inChannel.read()
     while ( i > 0 ) {
       //insert a modified println statement
+      println "The output is : ${i}"
       i = inChannel.read()
     }
     println "Finished"
