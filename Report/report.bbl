@@ -1,0 +1,20 @@
+\begin{thebibliography}{1}
+
+\bibitem{brute}
+J.~Malkevitch, ``Sales and chips,'' {\em Accessed: October 2016}.
+\newblock
+  \href{http://www.ams.org/samplings/feature-column/fcarc-tsp}{www.ams.org}.
+
+\bibitem{np}
+M.~Freiberger, ``The travelling salesman,'' {\em Accessed: November 2016}.
+\newblock
+  \href{https://plus.maths.org/content/travelling-salesman}{www.plus.maths.org}.
+
+\bibitem{nearest}
+D.~Johnson and L.~McGeoch, ``The travelling salesman problem: A case study in
+  local optimization,'' pp.~7--8, 1995.
+
+\bibitem{two}
+C.~Nilsson, ``Heuristics for the travelling salesman problem,'' pp.~1--3, 2003.
+
+\end{thebibliography}

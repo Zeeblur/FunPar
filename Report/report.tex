@@ -1,0 +1,140 @@
+\def\mytitle{Workbook}
+\def\myauthor{Zoe Wall}
+\def\contact{40182161@napier.ac.uk}
+\def\mymodule{Fundamentals of Parallel Systems (SET09109)}
+
+\documentclass[10pt, a4paper]{article}
+\usepackage[a4paper,outer=1.5cm,inner=1.5cm,top=1.75cm,bottom=1.5cm]{geometry}
+\onecolumn
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+%colour our links, remove weird boxes
+\usepackage[colorlinks,linkcolor={black},citecolor={blue!80!black},urlcolor={blue!80!black}]{hyperref}
+%Stop indentation on new paragraphs
+\usepackage[parfill]{parskip}
+%% all this is for Arial
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{uarial}
+\renewcommand{\familydefault}{\sfdefault}
+%Napier logo top right
+\usepackage{watermark}
+%Lorem Ipusm dolor please don't leave any in you final repot ;)
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{listings}
+%give us the Capital H that we all know and love
+\usepackage{float}
+%tone down the linespacing after section titles
+\usepackage{titlesec}
+%Cool maths printing
+\usepackage{amsmath}
+%PseudoCode
+\usepackage{algorithm2e}
+
+\titlespacing{\subsection}{0pt}{\parskip}{-3pt}
+\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
+\titlespacing{\paragraph}{0pt}{\parskip}{\parskip}
+\newcommand{\figuremacro}[5]{
+    \begin{figure}[#1]
+        \centering
+        \includegraphics[width=#5\textwidth]{#2}
+        \caption[#3]{\textbf{#3}#4}
+        \label{fig:#2}
+    \end{figure}
+}
+
+\newcommand{\figuremacroF}[5]{
+	\begin{figure}[#1]
+		\centering
+		\includegraphics[width=#5\textwidth]{#2}
+		\caption[#3]{\textbf{#3}#4}
+		\label{fig:#2}
+	\end{figure}
+}
+
+\lstset{
+	escapeinside={/*@}{@*/}, language=C++,
+	basicstyle=\fontsize{8.5}{12}\selectfont,
+	numbers=left,numbersep=2pt,xleftmargin=2pt,frame=tb,
+    columns=fullflexible,showstringspaces=false,tabsize=4,
+    keepspaces=true,showtabs=false,showspaces=false,
+    backgroundcolor=\color{white}, morekeywords={inline,public,
+    class,private,protected,struct},captionpos=t,lineskip=-0.4em,
+	aboveskip=10pt, extendedchars=true, breaklines=true,
+	prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+	keywordstyle=\color[rgb]{0,0,1},
+	commentstyle=\color[rgb]{0.133,0.545,0.133},
+	stringstyle=\color[rgb]{0.627,0.126,0.941}
+}
+
+\thiswatermark{\centering \put(336.5,-38.0){\includegraphics[scale=0.8]{logo}} }
+\title{\mytitle}
+\author{\myauthor\hspace{1em}\\\contact\\Edinburgh Napier University\hspace{0.5em}-\hspace{0.5em}\mymodule}
+\date{}
+\hypersetup{pdfauthor=\myauthor,pdftitle=\mytitle}
+\sloppy
+\begin{document}
+	\maketitle	
+
+	\title{\textbf{Exercise 2-1}}
+	\begin{lstlisting}[caption = "Multiplier.groovy"]
+
+	void run()
+	{
+		def i = inChannel.read()
+		while (i > 0) {
+			// write i * factor to outChannel
+			outChannel.write(i*factor)
+			// read in the next value of i
+			i = inChannel.read()
+		}
+		outChannel.write(i)
+	}
+		
+	\end{lstlisting}
+	
+	\begin{lstlisting}[caption = "Consumer.groovy"]
+	while ( i > 0 )
+	{
+	    //insert a modified println statement
+	    println "The output is : ${i}"
+	    i = inChannel.read()
+	}
+		    
+	\end{lstlisting}
+	
+	\begin{lstlisting}[caption = "RunMultiplier.groovy"]
+	def processList = [ new Producer ( outChannel: connect1.out() ),
+	
+	//insert here an instance of multiplier with a multiplication factor of 4
+			new Multiplier ( inChannel: connect1.in(),
+							outChannel: connect2.out(),
+							factor: 4),
+			new Consumer ( inChannel: connect2.in() )
+	]
+
+	
+	\end{lstlisting}
+	
+	\figuremacro{H}{2-1}{Output}{ - Output from Run Multiplier program.}{0.4}
+	
+	\title{\textbf{Exercise 2-2}}
+	
+	\begin{lstlisting}[caption = "ListToStream.groovy"]
+	while (inList[0] != -1)
+	{
+		// hint: output	list elements as single integers
+		for ( i in 0 ..< inList.size)outChannel.write(inList[i])
+		inList = inChannel.read()
+	}
+	\end{lstlisting}
+   
+   \bibliographystyle{ieeetr}
+   \bibliography{references}
+
+\clearpage
+\section{Appendix}
+
+		
+\end{document}
