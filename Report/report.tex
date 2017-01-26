@@ -101,13 +101,12 @@
 	    println "The output is : ${i}"
 	    i = inChannel.read()
 	}
-		    
 	\end{lstlisting}
 	
 	\begin{lstlisting}[caption = "RunMultiplier.groovy"]
 	def processList = [ new Producer ( outChannel: connect1.out() ),
 	
-	//insert here an instance of multiplier with a multiplication factor of 4
+		//insert here an instance of multiplier with a multiplication factor of 4
 			new Multiplier ( inChannel: connect1.in(),
 							outChannel: connect2.out(),
 							factor: 4),
