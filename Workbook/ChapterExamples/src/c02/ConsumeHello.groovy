@@ -11,10 +11,15 @@ class ConsumeHello implements CSProcess {
   
   def ChannelInput inChannel
   
+  // test
+  def message
+  
   void run() {
     def first = inChannel.read()
     def second = inChannel.read()
-    println "\n${first} ${second}!\n"
+	
+	message = "${first} ${second}!\n"
+	println message
   }
 }
 

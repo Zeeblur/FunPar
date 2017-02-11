@@ -125,9 +125,24 @@
 	{
 		// hint: output	list elements as single integers
 		for ( i in 0 ..< inList.size)outChannel.write(inList[i])
-		inList = inChannel.read()
+			inList = inChannel.read()
 	}
 	\end{lstlisting}
+	
+	
+	
+	\title{\textbf{Exercise 4-1}}
+	
+	When the read line is removed the output alternates between the incrementing reset value and the original numbers. This is because
+	the original value is not removed from the system if the channel is not read from.
+	
+	
+	
+	5.1 
+	Varying the delay times makes no difference to the process output, it works as expected regardless of changing the times. This happens because it uses preconditions to 
+   
+   
+   The latter is the more elegant solution because it avoids nested loops.
    
    \bibliographystyle{ieeetr}
    \bibliography{references}
