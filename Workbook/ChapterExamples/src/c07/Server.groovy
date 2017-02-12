@@ -17,6 +17,9 @@ class Server implements CSProcess{
   def ChannelOutput otherServerSend  
   def dataMap = [ : ]    
                 
+  // server id to identify 
+  def serverID
+  
   void run () {
     def CLIENT = 0
     def OTHER_REQUEST = 1
@@ -29,15 +32,25 @@ class Server implements CSProcess{
 	  
       switch (index) {		  
         case CLIENT :
+		  
           def key = clientRequest.read()
+		  println "Server $serverID recieves request for $key from CLIENT"
           if ( dataMap.containsKey(key) ) 
-            clientSend.write(dataMap[key])          
+            clientSend.write(dataMap[key])       
           else 
+	      {
+		    println "Server $serverID requests other server for $key"
+			  
             thisServerRequest.write(key)
+			
+	      }
+		  
           //end if 
           break
         case OTHER_REQUEST :
+		 
           def key = otherServerRequest.read()
+		  println "Server $serverID recieves request from other server."
           if ( dataMap.containsKey(key) ) 
             otherServerSend.write(dataMap[key])          
           else 
@@ -45,7 +58,9 @@ class Server implements CSProcess{
           //end if 
           break
         case THIS_RECEIVE :
+		  println "server $serverID gets request from server"
           clientSend.write(thisServerReceive.read() )
+		  println "send $serverID as a client"
           break
       } // end switch              
     } //end while   
