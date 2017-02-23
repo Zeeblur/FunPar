@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.12)  12 FEB 2017 21:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.12)  23 FEB 2017 18:05
 entering extended mode
 **./report.tex
 (report.tex
@@ -520,90 +520,152 @@ LaTeX Info: Redefining \nameref on input line 77.
 
 \c@lstlisting=\count135
 LaTeX Font Info:    Font shape `T1/ua1/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ua1/b/n' tried instead on input line 80.
+(Font)              Font shape `T1/ua1/b/n' tried instead on input line 81.
 LaTeX Font Info:    Font shape `T1/ua1/bx/n' in size <12> not available
-(Font)              Font shape `T1/ua1/b/n' tried instead on input line 82.
+(Font)              Font shape `T1/ua1/b/n' tried instead on input line 83.
+LaTeX Font Info:    Font shape `T1/ua1/bx/n' in size <10> not available
+(Font)              Font shape `T1/ua1/b/n' tried instead on input line 85.
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 83.
+nput line 89.
 LaTeX Font Info: \kern \lst@width \kern \lst@width \kern \lst@width Calculating
 \kern \lst@width math\kern \lst@width sizes\kern \lst@width for\kern \lst@width
- size\kern \lst@width <8.5> on input line 85.
+ size\kern \lst@width <8.5> on input line 90.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 85.
+(Font)              size <8> substituted on input line 90.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 85.
+(Font)              size <5> substituted on input line 90.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <8.5> not available
-(Font)              size <8> substituted on input line 85.
+(Font)              size <8> substituted on input line 90.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.25> not available
-(Font)              size <5> substituted on input line 85.
+(Font)              size <5> substituted on input line 90.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 85.
+(Font)              size <8> substituted on input line 90.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 85.
+(Font)              size <5> substituted on input line 90.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 85.
+(Font)              size <8> substituted on input line 90.
 
-LaTeX Font Info:    Try loading font information for OMS+ua1 on input line 89.
-LaTeX Font Info:    No file OMSua1.fd. on input line 89.
+LaTeX Font Info:    Try loading font information for OMS+ua1 on input line 94.
+LaTeX Font Info:    No file OMSua1.fd. on input line 94.
 
 LaTeX Font Warning: Font shape `OMS/ua1/m/n' undefined
 (Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textasteriskcentered' on input line 89.
+(Font)              for symbol `textasteriskcentered' on input line 94.
 
 
 LaTeX Font Warning: Font shape `OMS/ua1/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 90.
+(Font)              size <8> substituted on input line 95.
 
-<./images/2-1.jpg, id=15, 137.313pt x 100.57574pt>
+<./images/2-1.jpg, id=27, 137.313pt x 100.57574pt>
 File: ./images/2-1.jpg Graphic file (type jpg)
  <use ./images/2-1.jpg>
-Package pdftex.def Info: ./images/2-1.jpg used on input line 121.
+Package pdftex.def Info: ./images/2-1.jpg used on input line 123.
 (pdftex.def)             Requested size: 204.85672pt x 150.04831pt.
-LaTeX Font Info:    Font shape `T1/ua1/bx/n' in size <10> not available
-(Font)              Font shape `T1/ua1/b/n' tried instead on input line 121.
 
 [1
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] (report.bbl) [2pdfTeX war
-ning (ext4): destination with the same identifier (name{figure.1}) has been alr
-eady used, duplicate ignored
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}pdfTeX warning (ext4): dest
+ination with the same identifier (name{figure.1}) has been already used, duplic
+ate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.152 \clearpage
-                 <./images/2-1.jpg>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 156.
- [3
+l.129 	\subsection{Integer Sets}
+                                 <./images/2-1.jpg>]
+<./images/2-2.jpg, id=67, 274.02374pt x 51.7935pt>
+File: ./images/2-2.jpg Graphic file (type jpg)
+ <use ./images/2-2.jpg>
+Package pdftex.def Info: ./images/2-2.jpg used on input line 174.
+(pdftex.def)             Requested size: 307.2929pt x 58.08655pt.
+
+[2pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.189 
+       <./images/2-2.jpg>]
+<./images/3-1network.png, id=112, 663.47874pt x 61.22874pt>
+File: ./images/3-1network.png Graphic file (type png)
+
+<use ./images/3-1network.png>
+Package pdftex.def Info: ./images/3-1network.png used on input line 202.
+(pdftex.def)             Requested size: 512.14963pt x 47.26584pt.
+
+<./images/diffNetwork.png, id=114, 660.4675pt x 141.52875pt>
+File: ./images/diffNetwork.png Graphic file (type png)
+
+<use ./images/diffNetwork.png>
+Package pdftex.def Info: ./images/diffNetwork.png used on input line 208.
+(pdftex.def)             Requested size: 512.14963pt x 109.75058pt.
+ [3pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.222 	
+       	// be certain you know which way round you are doing the subtraction!!p
+dfTeX warning (ext4): destination with the same identifier (name{figure.4}) has
+ been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.222 	
+       	// be certain you know which way round you are doing the subtraction!! 
+<./images/3-1network.png> <./images/diffNetwork.png>]
+<./images/output3-1minus.png, id=133, 123.46124pt x 145.14224pt>
+File: ./images/output3-1minus.png Graphic file (type png)
+
+<use ./images/output3-1minus.png>
+Package pdftex.def Info: ./images/output3-1minus.png used on input line 241.
+(pdftex.def)             Requested size: 102.42836pt x 120.42151pt.
+
+<./images/negNetwork.png, id=134, 806.01125pt x 131.49126pt>
+File: ./images/negNetwork.png Graphic file (type png)
+
+<use ./images/negNetwork.png>
+Package pdftex.def Info: ./images/negNetwork.png used on input line 245.
+(pdftex.def)             Requested size: 512.14963pt x 83.55017pt.
+ [4pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.268 	\subsection*{Exercise Questions}
+                                       pdfTeX warning (ext4): destination with 
+the same identifier (name{figure.6}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.268 	\subsection*{Exercise Questions}
+                                        <./images/output3-1minus.png> <./images
+/negNetwork.png>] (report.bbl) [5]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 300.
+ [6
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 156.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 300.
  (report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 156.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 156.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 300.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 300.
+Package rerunfilecheck Info: File `report.out' has not changed.
+(rerunfilecheck)             Checksum: 97F190123115F1B8ED757AB3CFAB74ED;323.
 
-
-Package rerunfilecheck Warning: File `report.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `report.out':
-(rerunfilecheck)             Before: 4C6E0D2DDA50489166D6DD010DCBCBF8;143
-(rerunfilecheck)             After:  0900A356F64435F898CA099189F44E42;148.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.75pt have occurred.
@@ -611,28 +673,28 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 156.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 300.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 10148 strings out of 493333
- 144348 string characters out of 3139191
- 469275 words of memory out of 3000000
- 13478 multiletter control sequences out of 15000+200000
+ 10311 strings out of 493333
+ 146715 string characters out of 3139191
+ 536275 words of memory out of 3000000
+ 13567 multiletter control sequences out of 15000+200000
  61612 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 33i,7n,58p,289b,3233s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,8n,58p,596b,3681s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<D:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Program Fil
 es/MiKTeX 2.9/fonts/type1/urw/arial/ua1b8a.pfb><D:/Program Files/MiKTeX 2.9/fon
 ts/type1/urw/arial/ua1r8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/urw/aria
 l/ua1ri8a.pfb>
-Output written on report.pdf (3 pages, 59549 bytes).
+Output written on report.pdf (6 pages, 121005 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 55 named destinations out of 1000 (max. 500000)
- 30 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 229 PDF objects out of 1000 (max. 8388607)
+ 124 named destinations out of 1000 (max. 500000)
+ 79 words of extra memory for PDF output out of 10000 (max. 10000000)
 

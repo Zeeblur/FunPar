@@ -36,7 +36,11 @@ def network = [ new GNumbers ( outChannel: data.out() ),
 							 
                 new GPrint ( inChannel: scaledData.in(),
                 		     heading: "Original      Scaled",
-                		     delay: 0)
+                		     delay: 0),
+				
+				//new UserInterface ()
+			    // check the input
+				new GConsole (toConsole: timedData.in())
               ]
 
 new PAR ( network ).run()                                                            
