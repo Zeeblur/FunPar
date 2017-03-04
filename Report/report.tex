@@ -238,15 +238,16 @@
 	
 	\subparagraph{Output} \hfill
 	
-	\figuremacro{H}{output3-1minus}{Exercise 3-1}{ - Output from the Differentiate Process.}{0.2}
+	\figuremacro{H}{output3-1minus}{Exercise 3-1}{ - Output from the Differentiate System using the Minus Process.}{0.2}
 	
 	\subsection*{Negator Process}
 	
 	\figuremacro{H}{negNetwork}{Exercise 3-1}{ - Network showing processes for \textit{DifferentiateNeg.groovy} (replacement for Differentiate process within Figure \ref{fig:3-1network})}{1.0}
 	
 	\subparagraph{Explanation}
+	The negator process works by using the \textit{GPlus.groovy} process which outputs the sum of the two input channels read in parallel. The first input channel is a copy of the original input, whereas the second input channel is a negative version of the input with a leading zero from \textit{GPrefix.groovy}. 
 	
-	\subparagraph{Code}
+	\subparagraph{Code}\hfill
 	
 	\begin{lstlisting}[caption = "DifferentiateNeg.groovy" ]
 	def differentiateList = [ new GPrefix ( prefixValue: 0, 
@@ -262,39 +263,151 @@
 										outChannel: outChannel ) 
 									]	\end{lstlisting}
 	
-	\subparagraph{Output}
+	\subparagraph{Output} \hfill
 	
+	\figuremacro{H}{output3-1neg}{Exercise 3-1}{ - Output from the Differentiate System using the Negator process.}{0.2}
 	
 	\subsection*{Exercise Questions}
 	
 	\textit{Which is the more pleasing solution and why?}
 	In this case, even though the Negator solution requires an extra process, it can be argued that this is more pleasing as there is less room for error introduced by the order of the values within the Minus solution. However, a more appropriate solution to negating the effects of GIntegrate would be not to send the values through it in the first place.
 
-	\subsection{Exercise 3-2}
+	\subsection{Sequential Copy Process}
+	\hfill
+	\subsection*{GSCopy Code}
+	
+	\begin{lstlisting} [caption = "GSCopy.groovy"
+	\label{lst:GSCopy} ]
+	void run ()
+	{
+		while (true)
+		{
+			def i = inChannel.read()
+			// output the input value in sequence to each output channel
+			outChannel0.write(i)
+			outChannel1.write(i)
+		}
+	} \end{lstlisting}
+	
+	\subparagraph{Explanation}
+	
+	Within the GSCopy the input value is copied by outputting the value to both output channels in sequence not in parallel.
+	
+	\subsection*{GSPairsA}
+
+	\figuremacro{H}{GPairsAPN}{Exercise 3-2}{ - Process Network diagram of GSPairsA, as the copy is sequential the output is written first to channel \textbf{a} then to channel \textbf{b}.}{1.0}
+
+	\subparagraph{Output} \hfill
+	
+	\figuremacro{H}{pairsAoutput}{Excercise 3-2}{ -  Output from the Squares system, using the \textit{GSPairsA.groovy} process.}{0.4}
+	
+	\subsection*{GSPairsB}
+	
+	\figuremacro{H}{GPairsBPN}{Exercise 3-2}{ - Process Network diagram of GSPairsA, as the copy is sequential the output is written first to channel \textbf{b} then to channel \textbf{a}.}{1.0}
+
+	\subparagraph{Output} \hfill
+		
+	\figuremacro{H}{pairsBoutput}{Excercise 3-2}{ -  Output from the Squares system, using the \textit{GSPairsB.groovy} process.}{0.2}
+	
+	\subsection*{Questions}
+	
+	\figuremacro{H}{GSquaresPN}{Exercise 3-2}{ - Process Network diagram of test system, GSPairs is replaced by GSPairsA and GSPairsB to see the effect.}{1.0}
+	
+	\textit{Determine the effect of the change between GSPairsA and GSPairsB, why does this happen?}
+	
+	In running \textit{GSPairsA.groovy} the output, shown in Figure \ref{fig:pairsAoutput}, is blank after the header, whereas in running \textit{GSPairsB.groovy} the output, shown in Figure \ref{fig:pairsBoutput}, displays a heading and then a stream of square numbers. The reason for this change is due to the fact \textit{GSCopy.groovy} outputs sequentially. This causes DLOKC%TODO tail
 	
 	\subsection{Exercise 3-3}
 	
+	   Exercise 3 3   (2 marks)
+	Why was it considered easier to build GParPrint as a new process rather than using multiple instances of GPrint to output the table of results?
 	
-	\title{\textbf{Exercise 4-1}}
+	\setcounter{section}{4}
+	\section*{Exercise 4}
+	
+	\setcounter{subsection}{0}
+	\subsection{Reset}
+	
+ Exercise 4 1   (2 marks)
+What happens if line {25} of ResetPrefix Listing 4-1 is commented out? Why?
+Explore what happens if you try to send several reset values hence, explain what happens and provide a reason for this.
 	
 	When the read line is removed the output alternates between the incrementing reset value and the original numbers. This is because
 	the original value is not removed from the system if the channel is not read from.
 	
+	\subsection{Sucessor}
+	   Exercise 4 2   (2 marks
+	Construct a different formulation of ResetNumbers that connects the reset channel to the GSuccessor process instead of GPrefix.  You will have to write a ResetSuccssor process.  Does it overcome the problem identified in Exercise 1? If not, why not?
 	
+	\setcounter{section}{5}
+	\section*{Exercise 5}
 	
+	\setcounter{subsection}{0}
+	\subsection{q}
+	
+	   The accompanying web site contains a script, called RunQueue, in package ChapterExercises/src/c5 to run the queue network.  The delays associated with QProducer and QConsumer can be modified.  By varying the delay times demonstrate that the system works in the manner expected.  Correct operation can be determined by the QConsumer process outputting the messages “QConsumer has read 1” to “QConsumer has read 50” in sequence.  What do you conclude from these experiments?
 	5.1 
 	Varying the delay times makes no difference to the process output, it works as expected regardless of changing the times. This happens because it uses preconditions to 
 	
-	the latter situatuon is more 
-   
+	
+	\subsection{precon}
+      Reformulate the scaling device so that it uses pre-conditions rather than nested alternatives.  Which is the more elegant formulation? Why?
    
    The latter is the more elegant solution because it avoids nested loops.
    
-   \bibliographystyle{ieeetr}
-   \bibliography{references}
+   	\setcounter{section}{6}
+   \section*{Exercise 6}
+   
+   \setcounter{subsection}{0}
+   \subsection{test case}
+      Exercise 6 1   (5 marks)
+   Construct a Test Case for the Three-To-Eight system constructed in  the  exercise for Chapter 2.  
+   
+   	\setcounter{section}{7}
+	\section*{Exercise 7}
+	
+	
+	\setcounter{subsection}{0}
+	\subsection{dead case}
+	   Exercise 7 1   (5 marks)
+	By placing print statements in the coding for the Server and Client processes see if you can determine the precise nature of the deadlock in the Client Server system.  You will probably find it useful to add a property to the Server process by which you can identify each Server.  
 
-\clearpage
-\section{Appendix}
 
-		
+	\setcounter{section}{8}
+   \section*{Exercise 8}
+   
+   \setcounter{subsection}{0}
+   \subsection{test case}
+
+   Exercise 8 1   ( 4 marks)
+   Modify the Client process c07.Client so that it can ensure that the values returned from the Server arrive in the order expected according to their selectList property.  It should print a suitable message that the test has been undertaken and whether it passed or failed.  You are not to use the GroovyTestCase mechanism because this would require that the CSMux and Server processes would have to terminate, which would require a lot of unnecessary programming.  
+   
+   	\setcounter{section}{9}
+   \section*{Exercise 9}
+   
+   \setcounter{subsection}{0}
+   \subsection{missed test}
+   
+   Exercise 9 1   ( 5 marks)
+   Using the suggestion (Section 9.4.4) made earlier in the chapter, construct an additional process for the event handling system that ensures that the number of missed events is correct.  The additional process should be added to the network of processes.  You may need to modify the EventData class (Section 9.2.4) to facilitate this.
+   
+   \subsection{MultiStream}
+   Exercise 9 2   (5.marks)
+   The accompanying exercise package contains a version of the event handling system, RunMultiStream, which allows the creation of 1 to 9 event streams.  By modifying the times associated with each event generation stream and also of the processing system explore the performance of the system.  What do you conclude?
+   
+   \subsection{multiplexer}
+   Exercise 9 3   (6 marks)
+   The process EventProcessing has three versions of multiplexer defined within it, two of which are commented out.  By choosing each of the options in turn, comment upon the effect that each multiplexer variation has on overall system performance.
+   
+   	\setcounter{section}{11}
+   \section*{Exercise 11}
+   
+   \setcounter{subsection}{0}
+
+   \subsection{control}
+   Exercise 11 1   (8 marks)
+   The Control process in the Scaling system currently updates the scaling factor according to an automatic system.  Replace this with a user interface that issues the suspend communication, obtains the current scaling factor and then asks the user for the new scaling factor that is then injected into the Scaler.  The original and scaled values should also be output to the user interface.
+   Total Marks  (60)
+   
+	
 \end{document}
