@@ -15,7 +15,7 @@
 %% all this is for Arial
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
-\usepackage{uarial}
+\usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
 %Napier logo top right
 \usepackage{watermark}
@@ -313,12 +313,13 @@
 	
 	\figuremacro{H}{GSquaresPN}{Exercise 3-2}{ - Process Network diagram of test system, GSPairs is replaced by GSPairsA and GSPairsB to see the effect.}{1.0}
 	
-	\textit{Determine the effect of the change between GSPairsA and GSPairsB, why does this happen?}
+	\textit{Determine the effect of the change between GSPairsA and GSPairsB, why does this happen?} %TODO CHECK
 	
-	In running \textit{GSPairsA.groovy} the output, shown in Figure \ref{fig:pairsAoutput}, is blank after the header, whereas in running \textit{GSPairsB.groovy} the output, shown in Figure \ref{fig:pairsBoutput}, displays a heading and then a stream of square numbers. The reason for this change is due to the fact \textit{GSCopy.groovy} outputs sequentially. This causes DLOKC%TODO tail
+	In running \textit{GSPairsA.groovy} the output, shown in Figure \ref{fig:pairsAoutput}, is blank after the header, whereas in running \textit{GSPairsB.groovy} the output, shown in Figure \ref{fig:pairsBoutput}, displays a heading and then a stream of square numbers. The reason for this change is due to the fact \textit{GSCopy.groovy} outputs sequentially and even though the channels are the same, the order in which they are written to is different. See Figures \ref{fig:GPairsAPN} \& \ref{fig:GPairsBPN}. In the instance using \textit{GSPairsA.groovy} the system deadlocks.\textit{GPlus.groovy} reads both inputs in parallel so cannot process the values until both channels have an input. \textit{GTail.groovy} removes the first input it is given and then outputs the remaining numbers. However \textit{GTail.groovy} cannot receive another input until channel a (the channel between \textit{GSCopy.groovy} and \textit{GPlus.groovy}) is free. The instance using \textit{GSPairsB} does not deadlock as channel b - the channel between \textit{GSCopy.groovy} and \textit{GTail.groovy} - is written to first, so will be able to receive and send the next copied value on the next iteration of the sequential copy.
 	
-	\subsection{Exercise 3-3}
+	\subsection{GParPrint}
 	
+	%TODO ANSWER
 	   Exercise 3 3   (2 marks)
 	Why was it considered easier to build GParPrint as a new process rather than using multiple instances of GPrint to output the table of results?
 	
@@ -326,31 +327,99 @@
 	\section*{Exercise 4}
 	
 	\setcounter{subsection}{0}
-	\subsection{Reset}
+	\subsection{ResetPrefix}
+
+	\begin{lstlisting}[caption = "Line 25 of ResetPrefix.groovy"]
+		inChannel.read()	\end{lstlisting}
+		
+	\subparagraph{Output}
 	
- Exercise 4 1   (2 marks)
-What happens if line {25} of ResetPrefix Listing 4-1 is commented out? Why?
-Explore what happens if you try to send several reset values hence, explain what happens and provide a reason for this.
+	%TODO display output
+	
+	\subparagraph{Questions} \hfill
+	
+	\textit{What happens if line {25} of ResetPrefix Listing 4-1 is commented out? Why?}
 	
 	When the read line is removed the output alternates between the incrementing reset value and the original numbers. This is because
 	the original value is not removed from the system if the channel is not read from.
+		
+	\textit{Explore what happens if you try to send several reset values hence, explain what happens and provide a reason for this.}
 	
-	\subsection{Sucessor}
-	   Exercise 4 2   (2 marks
-	Construct a different formulation of ResetNumbers that connects the reset channel to the GSuccessor process instead of GPrefix.  You will have to write a ResetSuccssor process.  Does it overcome the problem identified in Exercise 1? If not, why not?
+	%TODO answer
+	dlock
 	
+	\subsection{ResetSucessor process}
+
+	\subparagraph{Code}
+	
+		Construct a different formulation of ResetNumbers that connects the reset channel to the GSuccessor process instead of GPrefix.  You will have to write a ResetSuccssor process.  
+	
+	
+	\subparagraph{Output}
+	
+	\subparagraph{Question}
+	\hfill
+	\textit{Does it overcome the problem identified in Exercise 1? If not, why not?}
+
 	\setcounter{section}{5}
 	\section*{Exercise 5}
 	
 	\setcounter{subsection}{0}
-	\subsection{q}
+	\subsection{Varying delay for RunQueue}
 	
 	   The accompanying web site contains a script, called RunQueue, in package ChapterExercises/src/c5 to run the queue network.  The delays associated with QProducer and QConsumer can be modified.  By varying the delay times demonstrate that the system works in the manner expected.  Correct operation can be determined by the QConsumer process outputting the messages “QConsumer has read 1” to “QConsumer has read 50” in sequence.  What do you conclude from these experiments?
 	5.1 
 	Varying the delay times makes no difference to the process output, it works as expected regardless of changing the times. This happens because it uses preconditions to 
 	
 	
-	\subsection{precon}
+	\subsection{Preconditions}
+	
+	\subparagraph{Code} \hfill
+	
+	\begin{lstlisting}[caption = "Scale.groovy"]
+	while (true)
+	{
+		switch ( scaleAlt.priSelect(preCon) )
+		{
+			case SUSPEND :
+				//  deal with suspend input      
+				suspend.read()
+				factor.write(scaling)
+				suspended = true
+				println "Suspended"		
+				preCon[SUSPEND] = false
+				preCon[INJECT] = true  
+				break
+			case INJECT:
+				//  deal with inject input
+				scaling = injector.read()
+				println "Injected scaling is $scaling"
+				suspended = false
+				timeout = timer.read() + DOUBLE_INTERVAL
+				timer.setAlarm(timeout)
+				preCon[SUSPEND] = true
+				preCon[INJECT] = false
+				suspended = false
+				break
+			case TIMER:
+				//  deal with Timer input
+				timeout = timer.read() + DOUBLE_INTERVAL
+				timer.setAlarm ( timeout )
+				scaling = scaling * 2
+				println "Normal Timer: new scaling is ${scaling}"
+				break
+			case INPUT:
+				//   deal with Input channel 
+				def inValue = inChannel.read()
+				def result = new ScaledData()
+				result.original = inValue
+				result.scaled = inValue * scaling
+				outChannel.write( result )
+				break
+		} //end-switch
+	} //end-while		\end{lstlisting}
+	
+	\subparagraph{Questions} \hfill
       Reformulate the scaling device so that it uses pre-conditions rather than nested alternatives.  Which is the more elegant formulation? Why?
    
    The latter is the more elegant solution because it avoids nested loops.
@@ -359,9 +428,37 @@ Explore what happens if you try to send several reset values hence, explain what
    \section*{Exercise 6}
    
    \setcounter{subsection}{0}
-   \subsection{test case}
-      Exercise 6 1   (5 marks)
-   Construct a Test Case for the Three-To-Eight system constructed in  the  exercise for Chapter 2.  
+   \subsection{Test Case for Three-To-Eight} \hfill
+   
+   \subparagraph{Code} \hfill
+   
+   \begin{lstlisting}[caption = "RunThreeToEightTest.groovy"]
+   class RunThreeToEightTest extends GroovyTestCase
+   {
+   		void testThreeToEight()
+   		{
+   			One2OneChannel genToStream = Channel.one2one()
+  	 		One2OneChannel streamToEight = Channel.one2one()
+   
+  			def gen = new GenerateSetsOfThree ( outChannel: genToStream.out())
+   			def list = new ListToStream ( inChannel: genToStream.in(), outChannel: streamToEight.out())
+   			def eight = new CreateSetsOfEight ( inChannel: streamToEight.in())
+   
+   			def testRunList = [gen, list, eight]
+   			new PAR(testRunList).run()
+   
+   			// test output is correct from eight
+   			def expectedList = list.inTest
+   			def actualList = eight.outTest
+   
+   			println "exp ${expectedList} + act ${actualList}"
+   
+   			assertTrue(expectedList == actualList)
+   		}
+   }   \end{lstlisting}
+   
+   \subparagraph{Output}
+   %TODO add screencap
    
    	\setcounter{section}{7}
 	\section*{Exercise 7}
