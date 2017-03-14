@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.8)  8 MAR 2017 22:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.8)  14 MAR 2017 22:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -731,12 +731,12 @@ l.319
 l.319 
        <./images/pairsAoutput.png> <./images/GPairsBPN.png> <./images/pairsBout
 put.png> <./images/GSquaresPN.png>] [7] [8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 509.
- [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 509.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 513.
+ [9] [10]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 513.
  (./report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 509.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 509.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 513.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 513.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 40D87E4434B9BDCDF4B9AEEF7F22CCAA;887.
 
@@ -744,16 +744,16 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.75pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 509.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 513.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 10543 strings out of 493014
- 151316 string characters out of 6133352
- 588149 words of memory out of 5000000
+ 10544 strings out of 493014
+ 151323 string characters out of 6133352
+ 572149 words of memory out of 5000000
  13716 multiletter control sequences out of 15000+600000
  32769 words of font info for 46 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -763,10 +763,10 @@ Here is how much of TeX's memory you used:
 /usr/local/texlive/2016/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/lo
 cal/texlive/2016/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/tex
 live/2016/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on report.pdf (9 pages, 140230 bytes).
+Output written on report.pdf (10 pages, 140838 bytes).
 PDF statistics:
- 401 PDF objects out of 1000 (max. 8388607)
- 363 compressed objects within 4 object streams
- 218 named destinations out of 1000 (max. 500000)
+ 405 PDF objects out of 1000 (max. 8388607)
+ 366 compressed objects within 4 object streams
+ 219 named destinations out of 1000 (max. 500000)
  189 words of extra memory for PDF output out of 10000 (max. 10000000)
 

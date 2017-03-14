@@ -323,6 +323,9 @@
 	   Exercise 3 3   (2 marks)
 	Why was it considered easier to build GParPrint as a new process rather than using multiple instances of GPrint to output the table of results?
 	
+	It is easier to build a parallel printing process rather than using multiple instances of \textit{GPrint} as it allows for printing results from multiple processes at once. It also allows for %reuse/more processes etc 
+	However as a parallel print needs to wait for every input process to return a value to print, it means that it can only output as fast as the slowest process. Therefore it would only be easier to use if the processes to print output at a regular rate.
+	
 	\setcounter{section}{4}
 	\section*{Exercise 4}
 	
