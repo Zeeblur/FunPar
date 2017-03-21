@@ -2,6 +2,9 @@ package c4
 
 
 import org.jcsp.lang.*
+
+import java.nio.channels.AlreadyBoundException
+
 import org.jcsp.groovy.*
 
 class ResetSuccessor implements CSProcess {
@@ -17,13 +20,15 @@ class ResetSuccessor implements CSProcess {
 	  // deal with inputs from resteChannel and inChannel
 	  // use a priSelect
 		def index = alt.priSelect();
-		switch (index)
+		if (index == 0)
 		{
-			case resetChannel:
-			
-				//def reset
-			case inChannel:
-				outChannel.write(inChannel.read() + 1)
+			def value = resetChannel.read()
+			inChannel.read()
+			outChannel.write(value)
+		}
+		else
+		{
+			outChannel.write(inChannel.read() +1)				
 		}
 	}
   }

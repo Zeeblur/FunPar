@@ -7,17 +7,19 @@ class ListToStream implements CSProcess{
 	def ChannelInput inChannel
 	def ChannelOutput outChannel
 	
-	def inTest
+	def inTest = [8]
 	
 	void run (){
 		def inList = inChannel.read()
 		while (inList[0] != -1) {
 			// hint: output	list elements as single integers
-			for ( i in 0 ..< inList.size)outChannel.write(inList[i])
+			for ( i in 0 ..< inList.size)
+			{
+				outChannel.write(inList[i])
 				
+				inTest[i] = (inList[i])
+			}
 			inList = inChannel.read()
-			// intest -1- 1--1
-			inTest = inList
 		}
 		outChannel.write(-1)
 	}

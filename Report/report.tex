@@ -335,9 +335,9 @@
 	\begin{lstlisting}[caption = "Line 25 of ResetPrefix.groovy"]
 		inChannel.read()	\end{lstlisting}
 		
-	\subparagraph{Output}
+	\subparagraph{Output} \hfill
 	
-	%TODO display output
+	\figuremacro{H}{resetNum}{Exercise 4-1}{ - Output from the ResetNumbers program when line 25 of \textit{ResetPrefix.groovy} is removed.}{0.5}
 	
 	\subparagraph{Questions} \hfill
 	
@@ -348,21 +348,61 @@
 		
 	\textit{Explore what happens if you try to send several reset values hence, explain what happens and provide a reason for this.}
 	
+	%TODO add diagram here to explain dlock
+	
 	%TODO answer
 	dlock
 	
 	\subsection{ResetSucessor process}
 
-	\subparagraph{Code}
+	\subparagraph{Code} \hfil
 	
-		Construct a different formulation of ResetNumbers that connects the reset channel to the GSuccessor process instead of GPrefix.  You will have to write a ResetSuccssor process.  
+%	Construct a different formulation of ResetNumbers that connects the reset channel to the GSuccessor process instead of GPrefix.  You will have to write a ResetSuccssor process.  
 	
+	\begin{lstlisting}[caption = "ResetSucessor.groovy"]
+	while (true)
+	{
+		// deal with inputs from resetChannel and inChannel
+		// use a priSelect
+		def index = alt.priSelect();
+		
+		if (index == 0) 		// reset Channel input
+		{
+			def resetVal = resetChannel.read()
+			inChannel.read()
+			outChannel.write(resetVal)
+		}
+		else						// outChannel input
+		{
+			outChannel.write(inChannel.read() +1)				
+		}
+	}	\end{lstlisting}
+	
+	\begin{lstlisting} [caption = "ResetNumbers.groovy"]
+	def testList = [
+		new GPrefix ( prefixValue: initialValue, 
+			outChannel: a.out(), 
+			inChannel: c.in() ),
+		new GPCopy ( inChannel: a.in(), 
+			outChannel0: outChannel, 
+			outChannel1: b.out() ),
+		// requires a constructor for ResetSuccessor
+		new ResetSuccessor (inChannel: b.in(),
+			outChannel: c.out(),
+			resetChannel: resetChannel )
+	]	\end{lstlisting}
+	
+	\subparagraph{Diagram}
+	%TODO diagram for reset numbers to ResetSuccessor
 	
 	\subparagraph{Output}
 	
 	\subparagraph{Question}
 	\hfill
 	\textit{Does it overcome the problem identified in Exercise 1? If not, why not?}
+	%No, the same problem persists as it is still possible to inject more values than the system can handle.	Without the reading and removing the integers from the channels as needed, there is no way to force the
+	
+	system to behave as intended.
 
 	\setcounter{section}{5}
 	\section*{Exercise 5}
@@ -425,7 +465,7 @@
 	\subparagraph{Questions} \hfill
       Reformulate the scaling device so that it uses pre-conditions rather than nested alternatives.  Which is the more elegant formulation? Why?
    
-   The latter is the more elegant solution because it avoids nested loops.
+   The latter is the more elegant solution because it avoids nested loops. 
    
    	\setcounter{section}{6}
    \section*{Exercise 6}
@@ -470,9 +510,19 @@
 	\setcounter{subsection}{0}
 	\subsection{dead case}
 	   Exercise 7 1   (5 marks)
-	By placing print statements in the coding for the Server and Client processes see if you can determine the precise nature of the deadlock in the Client Server system.  You will probably find it useful to add a property to the Server process by which you can identify each Server.  
-
-
+	By placing print statements in the coding for the Server and Client processes see if you can determine the precise nature of the deadlock in the Client Server system.  You will probably find it useful to add a property to the Server process by which you can identify each Server. 
+	
+	\subparagraph{Output}
+	
+			
+	\figuremacro{H}{deadlock}{Excercise 7-1}{ -  Output from the Server Client process}{0.5}
+	
+	As you can see from the output of the program, 
+	both servers request values from eachother that causes the deadlock, 
+	
+	
+	
+	
 	\setcounter{section}{8}
    \section*{Exercise 8}
    
@@ -482,7 +532,40 @@
    Exercise 8 1   ( 4 marks)
    Modify the Client process c07.Client so that it can ensure that the values returned from the Server arrive in the order expected according to their selectList property.  It should print a suitable message that the test has been undertaken and whether it passed or failed.  You are not to use the GroovyTestCase mechanism because this would require that the CSMux and Server processes would have to terminate, which would require a lot of unnecessary programming.  
    
-   	\setcounter{section}{9}
+   \subparagraph{Code} \hfill
+   \begin{lstlisting} [caption = "Client.groovy"]
+   	void run()
+   	{
+   		def iterations = selectList.size
+   		println "Client $clientNumber has $iterations values in $selectList"
+   	
+   		for ( i in 0 ..< iterations) {
+   			def key = selectList[i]
+   			println "Client number $clientNumber requests $key"
+   			requestChannel.write(key)
+   			def v = receiveChannel.read()
+   	
+  	 		// add response from server to actual response list
+   			actualList << v
+   		}
+   	
+   		println "Client $clientNumber has finished"
+   	
+   		// multiply each value by ten and add in order from selectList = expected value from server
+   		for(i in 0 ..< iterations)expectedList << selectList[i]*10
+   	
+   		// check if actual equals expected 
+   		if (actualList.equals(expectedList))
+   			println "test passed"
+   		else
+   			println "test failed"
+   	}\end{lstlisting}
+   
+   \subparagraph{Output}
+   
+  	\figuremacro{H}{testClient}{Excercise 8-1}{ -  Output from the Server Client test.}{0.3}
+   
+   \setcounter{section}{9}
    \section*{Exercise 9}
    
    \setcounter{subsection}{0}
