@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.12)  23 MAR 2017 03:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.12)  23 MAR 2017 14:51
 entering extended mode
 **./report.tex
 (report.tex
@@ -409,7 +409,43 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \c@algocf=\count127
 \algocf@algoframe=\box39
 \algocf@algobox=\box40
-) ("D:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+) ("D:\Program Files\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+
+("D:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+("D:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen142
+\captionmargin@=\dimen143
+\captionwidth=\dimen144
+\caption@tempdima=\dimen145
+\caption@indent=\dimen146
+\caption@parindent=\dimen147
+\caption@hangindent=\dimen148
+)
+\c@ContinuedFloat=\count128
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+)
+\c@KVtest=\count129
+\sf@farskip=\skip67
+\sf@captopadj=\dimen149
+\sf@capskip=\skip68
+\sf@nearskip=\skip69
+\c@subfigure=\count130
+\c@subfigure@save=\count131
+\c@lofdepth=\count132
+\c@subtable=\count133
+\c@subtable@save=\count134
+\c@lotdepth=\count135
+\sf@top=\skip70
+\sf@bottom=\skip71
+)
+("D:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 ("D:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
@@ -420,21 +456,21 @@ File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
 ) (report.aux)
 \openout1 = `report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
-LaTeX Font Info:    ... okay on input line 77.
-LaTeX Font Info:    Try loading font information for T1+phv on input line 77.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 78.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\psnfss\t1phv.fd"
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
@@ -475,16 +511,16 @@ File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 
 ("D:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count128
-\scratchdimen=\dimen142
+\scratchcounter=\count136
+\scratchdimen=\dimen150
 \scratchbox=\box41
-\nofMPsegments=\count129
-\nofMParguments=\count130
+\nofMPsegments=\count137
+\nofMParguments=\count138
 \everyMPshowfont=\toks25
-\MPscratchCnt=\count131
-\MPscratchDim=\dimen143
-\MPnumerator=\count132
-\makeMPintoPDFobject=\count133
+\MPscratchCnt=\count139
+\MPscratchDim=\dimen151
+\MPnumerator=\count140
+\makeMPintoPDFobject=\count141
 \everyMPtoPDFconversion=\toks26
 ) ("D:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
@@ -500,7 +536,7 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 \AtBeginShipoutBox=\box42
-Package hyperref Info: Link coloring ON on input line 77.
+Package hyperref Info: Link coloring ON on input line 78.
 
 ("D:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -508,333 +544,263 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 ("D:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count134
+\c@section@level=\count142
 )
-LaTeX Info: Redefining \ref on input line 77.
-LaTeX Info: Redefining \pageref on input line 77.
-LaTeX Info: Redefining \nameref on input line 77.
+LaTeX Info: Redefining \ref on input line 78.
+LaTeX Info: Redefining \pageref on input line 78.
+LaTeX Info: Redefining \nameref on input line 78.
 
 (report.out) (report.out)
 \@outlinefile=\write3
 \openout3 = `report.out'.
 
-\c@lstlisting=\count135
+\c@lstlisting=\count143
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 81.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 82.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 83.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 84.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 85.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 86.
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 89.
+nput line 90.
 LaTeX Font Info: \kern \lst@width \kern \lst@width \kern \lst@width Calculating
 \kern \lst@width math\kern \lst@width sizes\kern \lst@width for\kern \lst@width
- size\kern \lst@width <8.5> on input line 90.
+ size\kern \lst@width <8.5> on input line 91.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 90.
+(Font)              size <8> substituted on input line 91.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 90.
+(Font)              size <5> substituted on input line 91.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <8.5> not available
-(Font)              size <8> substituted on input line 90.
+(Font)              size <8> substituted on input line 91.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.25> not available
-(Font)              size <5> substituted on input line 90.
+(Font)              size <5> substituted on input line 91.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 90.
+(Font)              size <8> substituted on input line 91.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.25> not available
-(Font)              size <5> substituted on input line 90.
+(Font)              size <5> substituted on input line 91.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 90.
+(Font)              size <8> substituted on input line 91.
 
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 94.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 95.
 ("D:\Program Files\MiKTeX 2.9\tex\latex\psnfss\omsphv.fd"
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <8.5> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 94.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 95.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.5> not available
-(Font)              size <8> substituted on input line 94.
+(Font)              size <8> substituted on input line 95.
 
 <./images/2-1.jpg, id=67, 137.313pt x 100.57574pt>
 File: ./images/2-1.jpg Graphic file (type jpg)
  <use ./images/2-1.jpg>
-Package pdftex.def Info: ./images/2-1.jpg used on input line 123.
+Package pdftex.def Info: ./images/2-1.jpg used on input line 124.
 (pdftex.def)             Requested size: 204.85672pt x 150.04831pt.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <10> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 128.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 129.
 
 [1
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}pdfTeX warning (ext4): dest
-ination with the same identifier (name{figure.1}) has been already used, duplic
-ate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.129 	\subsection{Integer Sets}
-                                 <./images/2-1.jpg>]
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./images/2-1.jpg>]
 <./images/2-2.jpg, id=107, 274.02374pt x 51.7935pt>
 File: ./images/2-2.jpg Graphic file (type jpg)
  <use ./images/2-2.jpg>
-Package pdftex.def Info: ./images/2-2.jpg used on input line 174.
+Package pdftex.def Info: ./images/2-2.jpg used on input line 175.
 (pdftex.def)             Requested size: 307.2929pt x 58.08655pt.
 
-[2pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
-has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.189 
-       <./images/2-2.jpg>]
+[2 <./images/2-2.jpg>]
 <./images/3-1network.png, id=152, 663.47874pt x 61.22874pt>
 File: ./images/3-1network.png Graphic file (type png)
 
 <use ./images/3-1network.png>
-Package pdftex.def Info: ./images/3-1network.png used on input line 202.
+Package pdftex.def Info: ./images/3-1network.png used on input line 203.
 (pdftex.def)             Requested size: 512.14963pt x 47.26584pt.
 
 <./images/diffNetwork.png, id=154, 660.4675pt x 141.52875pt>
 File: ./images/diffNetwork.png Graphic file (type png)
 
 <use ./images/diffNetwork.png>
-Package pdftex.def Info: ./images/diffNetwork.png used on input line 208.
+Package pdftex.def Info: ./images/diffNetwork.png used on input line 209.
 (pdftex.def)             Requested size: 512.14963pt x 109.75058pt.
- [3pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
- has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.222 	
-       	// be certain you know which way round you are doing the subtraction!!p
-dfTeX warning (ext4): destination with the same identifier (name{figure.4}) has
- been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.222 	
-       	// be certain you know which way round you are doing the subtraction!! 
-<./images/3-1network.png> <./images/diffNetwork.png>]
-<./images/output3-1minus.png, id=173, 123.46124pt x 145.14224pt>
+ [3 <./images/3-1network.png> <./images/diffNetwork.png>] <./images/output3-1mi
+nus.png, id=177, 123.46124pt x 145.14224pt>
 File: ./images/output3-1minus.png Graphic file (type png)
 
 <use ./images/output3-1minus.png>
-Package pdftex.def Info: ./images/output3-1minus.png used on input line 241.
+Package pdftex.def Info: ./images/output3-1minus.png used on input line 242.
 (pdftex.def)             Requested size: 102.42836pt x 120.42151pt.
 
-<./images/negNetwork.png, id=174, 806.01125pt x 131.49126pt>
+<./images/negNetwork.png, id=178, 806.01125pt x 131.49126pt>
 File: ./images/negNetwork.png Graphic file (type png)
 
 <use ./images/negNetwork.png>
-Package pdftex.def Info: ./images/negNetwork.png used on input line 245.
+Package pdftex.def Info: ./images/negNetwork.png used on input line 246.
 (pdftex.def)             Requested size: 512.14963pt x 83.55017pt.
- [4pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
- has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.264 	
-       								]	\end{lstlisting}pdfTeX warning (ext4): destination with the sa
-me identifier (name{figure.6}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.264 	
-       								]	\end{lstlisting} <./images/output3-1minus.png> <./images/negNe
-twork.png>] <./images/output3-1neg.png, id=210, 137.313pt x 142.73325pt>
+<./images/output3-1neg.png, id=181, 137.313pt x 142.73325pt>
 File: ./images/output3-1neg.png Graphic file (type png)
 
 <use ./images/output3-1neg.png>
-Package pdftex.def Info: ./images/output3-1neg.png used on input line 268.
+Package pdftex.def Info: ./images/output3-1neg.png used on input line 269.
 (pdftex.def)             Requested size: 102.42836pt x 106.47032pt.
-
-<./images/GPairsAPN.png, id=211, 698.61pt x 111.41624pt>
+ [4 <./images/output3-1minus.png> <./images/negNetwork.png>] <./images/GPairsAP
+N.png, id=215, 698.61pt x 111.41624pt>
 File: ./images/GPairsAPN.png Graphic file (type png)
 
 <use ./images/GPairsAPN.png>
-Package pdftex.def Info: ./images/GPairsAPN.png used on input line 298.
+Package pdftex.def Info: ./images/GPairsAPN.png used on input line 299.
 (pdftex.def)             Requested size: 512.14963pt x 81.6834pt.
 
-<./images/pairsAoutput.png, id=212, 118.64325pt x 51.7935pt>
+<./images/pairsAoutput.png, id=216, 118.64325pt x 51.7935pt>
 File: ./images/pairsAoutput.png Graphic file (type png)
 
 <use ./images/pairsAoutput.png>
-Package pdftex.def Info: ./images/pairsAoutput.png used on input line 302.
-(pdftex.def)             Requested size: 204.85672pt x 89.4308pt.
- [5pdfTeX warning (ext4): destination with the same identifier (name{figure.7})
- has been already used, duplicate ignored
+Package pdftex.def Info: ./images/pairsAoutput.png used on input line 303.
+(pdftex.def)             Requested size: 153.64644pt x 67.07468pt.
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.303 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-8}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.303 
-       <./images/output3-1neg.png> <./images/GPairsAPN.png>]
-<./images/GPairsBPN.png, id=234, 698.61pt x 101.37875pt>
+<./images/GPairsBPN.png, id=217, 698.61pt x 101.37875pt>
 File: ./images/GPairsBPN.png Graphic file (type png)
 
 <use ./images/GPairsBPN.png>
-Package pdftex.def Info: ./images/GPairsBPN.png used on input line 306.
+Package pdftex.def Info: ./images/GPairsBPN.png used on input line 307.
 (pdftex.def)             Requested size: 512.14963pt x 74.32452pt.
-
-<./images/pairsBoutput.png, id=235, 91.542pt x 139.11975pt>
+ [5 <./images/output3-1neg.png> <./images/GPairsAPN.png> <./images/pairsAoutput
+.png>]
+<./images/pairsBoutput.png, id=237, 91.542pt x 139.11975pt>
 File: ./images/pairsBoutput.png Graphic file (type png)
 
 <use ./images/pairsBoutput.png>
-Package pdftex.def Info: ./images/pairsBoutput.png used on input line 310.
+Package pdftex.def Info: ./images/pairsBoutput.png used on input line 311.
 (pdftex.def)             Requested size: 102.42836pt x 155.66869pt.
 
-<./images/GSquaresPN.png, id=236, 753.81625pt x 111.41624pt>
+<./images/GSquaresPN.png, id=238, 753.81625pt x 111.41624pt>
 File: ./images/GSquaresPN.png Graphic file (type png)
 
 <use ./images/GSquaresPN.png>
-Package pdftex.def Info: ./images/GSquaresPN.png used on input line 314.
+Package pdftex.def Info: ./images/GSquaresPN.png used on input line 315.
 (pdftex.def)             Requested size: 512.14963pt x 75.69574pt.
- [6pdfTeX warning (ext4): destination with the same identifier (name{figure.9})
- has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.319 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-10}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.319 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-11}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.319 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-12}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.319 
-       <./images/pairsAoutput.png> <./images/GPairsBPN.png> <./images/pairsBout
-put.png> <./images/GSquaresPN.png>]
-<./images/resetNum.png, id=251, 265.59225pt x 248.72925pt>
+ [6 <./images/GPairsBPN.png> <./images/pairsBoutput.png> <./images/GSquaresPN.p
+ng>]
+<./images/resetNum.png, id=252, 265.59225pt x 248.72925pt>
 File: ./images/resetNum.png Graphic file (type png)
 
 <use ./images/resetNum.png>
-Package pdftex.def Info: ./images/resetNum.png used on input line 340.
+Package pdftex.def Info: ./images/resetNum.png used on input line 341.
 (pdftex.def)             Requested size: 256.07481pt x 239.84004pt.
- [7pdfTeX warning (ext4): destination with the same identifier (name{figure.13}
-) has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.351 
-       <./images/resetNum.png>]
-<./images/resetPre.png, id=262, 536.0025pt x 151.56625pt>
+<./images/resetPre.png, id=255, 536.0025pt x 151.56625pt>
 File: ./images/resetPre.png Graphic file (type png)
 
 <use ./images/resetPre.png>
-Package pdftex.def Info: ./images/resetPre.png used on input line 352.
+Package pdftex.def Info: ./images/resetPre.png used on input line 353.
 (pdftex.def)             Requested size: 358.50317pt x 101.37308pt.
- [8pdfTeX warning (ext4): destination with the same identifier (name{figure.14}
-) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.414 	\subsection{Preconditions}
-                                  <./images/resetPre.png>] [9]
-<./images/unitTest.png, id=353, 298.11375pt x 122.25674pt>
+ [7 <./images/resetNum.png>] [8 <./images/resetPre.png>] [9] <./images/unitTest
+.png, id=358, 298.11375pt x 122.25674pt>
 File: ./images/unitTest.png Graphic file (type png)
 
 <use ./images/unitTest.png>
-Package pdftex.def Info: ./images/unitTest.png used on input line 504.
+Package pdftex.def Info: ./images/unitTest.png used on input line 507.
 (pdftex.def)             Requested size: 358.50317pt x 147.03194pt.
 
-<./images/deadlock.png, id=355, 248.72925pt x 192.72pt>
+<./images/deadlock.png, id=360, 248.72925pt x 192.72pt>
 File: ./images/deadlock.png Graphic file (type png)
 
 <use ./images/deadlock.png>
-Package pdftex.def Info: ./images/deadlock.png used on input line 522.
+Package pdftex.def Info: ./images/deadlock.png used on input line 525.
 (pdftex.def)             Requested size: 256.07481pt x 198.41852pt.
- [10pdfTeX warning (ext4): destination with the same identifier (name{figure.15
-}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.523 
-       <./images/unitTest.png>]
-<./images/testClient.png, id=381, 142.73325pt x 61.4295pt>
+ [10 <./images/unitTest.png>]
+<./images/testClient.png, id=382, 142.73325pt x 61.4295pt>
 File: ./images/testClient.png Graphic file (type png)
 
 <use ./images/testClient.png>
-Package pdftex.def Info: ./images/testClient.png used on input line 560.
+Package pdftex.def Info: ./images/testClient.png used on input line 563.
 (pdftex.def)             Requested size: 153.64644pt x 66.13194pt.
- [11pdfTeX warning (ext4): destination with the same identifier (name{figure.16
-}) has been already used, duplicate ignored
+ [11 <./images/deadlock.png> <./images/testClient.png>] <./images/evalid.png, i
+d=415, 523.9575pt x 162.6075pt>
+File: ./images/evalid.png Graphic file (type png)
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.565 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-17}) has been already used, duplicate ignored
+<use ./images/evalid.png>
+Package pdftex.def Info: ./images/evalid.png used on input line 575.
+(pdftex.def)             Requested size: 512.14963pt x 158.94734pt.
+ [12 <./images/evalid.png>] [13] [14]
+<./images/UI.png, id=561, 723.70375pt x 115.43124pt>
+File: ./images/UI.png Graphic file (type png)
+ <use ./images/UI.png>
+Package pdftex.def Info: ./images/UI.png used on input line 794.
+(pdftex.def)             Requested size: 512.14963pt x 81.68903pt.
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.565 
-       <./images/deadlock.png> <./images/testClient.png>] [12]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 712.
- [13]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 712.
- (report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 712.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 712.
+<./images/uiSuspend.png, id=562, 263.7855pt x 532.389pt>
+File: ./images/uiSuspend.png Graphic file (type png)
+
+<use ./images/uiSuspend.png>
+Package pdftex.def Info: ./images/uiSuspend.png used on input line 801.
+(pdftex.def)             Requested size: 180.67499pt x 364.65176pt.
+
+<./images/uiInject.png, id=563, 261.3765pt x 531.78674pt>
+File: ./images/uiInject.png Graphic file (type png)
+
+<use ./images/uiInject.png>
+Package pdftex.def Info: ./images/uiInject.png used on input line 804.
+(pdftex.def)             Requested size: 180.67499pt x 367.59052pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 815.
+[15 <./images/UI.png>] [16 <./images/uiSuspend.png> <./images/uiInject.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 815.
+
+(report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 815.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 815.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: C308F0FC2C16402304B458052F39FA34;932.
+(rerunfilecheck)             Checksum: 213E0D7A761381CE5AB93497B96C9008;958.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.75pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 712.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 815.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 10747 strings out of 493333
- 153530 string characters out of 3139191
- 532274 words of memory out of 3000000
- 13794 multiletter control sequences out of 15000+200000
- 32769 words of font info for 46 fonts, out of 3000000 for 9000
+ 12180 strings out of 493333
+ 178773 string characters out of 3139191
+ 725545 words of memory out of 3000000
+ 15070 multiletter control sequences out of 15000+200000
+ 35659 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 33i,8n,58p,1246b,3733s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 44i,10n,58p,1246b,4736s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<D:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Program Fil
 es/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><D:/Program Files/MiKTeX 2.9/
 fonts/type1/urw/helvetic/uhvr8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/ur
 w/helvetic/uhvro8a.pfb>
-Output written on report.pdf (13 pages, 232590 bytes).
+Output written on report.pdf (16 pages, 339379 bytes).
 PDF statistics:
- 544 PDF objects out of 1000 (max. 8388607)
- 324 named destinations out of 1000 (max. 500000)
- 214 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 732 PDF objects out of 1000 (max. 8388607)
+ 466 named destinations out of 1000 (max. 500000)
+ 234 words of extra memory for PDF output out of 10000 (max. 10000000)
 

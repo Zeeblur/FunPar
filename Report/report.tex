@@ -1,6 +1,6 @@
 \def\mytitle{Workbook}
-\def\myauthor{Zoe Wall}
-\def\contact{40182161@napier.ac.uk}
+\def\myauthor{REQUIREMENT 4}
+\def\contact{40182161}
 \def\mymodule{Fundamentals of Parallel Systems (SET09109)}
 
 \documentclass[10pt, a4paper]{article}
@@ -31,6 +31,7 @@
 \usepackage{amsmath}
 %PseudoCode
 \usepackage{algorithm2e}
+\usepackage{subfig}
 
 \titlespacing{\subsection}{0pt}{\parskip}{-3pt}
 \titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
@@ -47,7 +48,7 @@
 \newcommand{\figuremacroF}[5]{
 	\begin{figure}[#1]
 		\centering
-		\includegraphics[width=#5\textwidth]{#2}
+		\includegraphics[width=#5\columnwidth]{#2}
 		\caption[#3]{\textbf{#3}#4}
 		\label{fig:#2}
 	\end{figure}
@@ -299,7 +300,7 @@
 
 	\subparagraph{Output} \hfill
 	
-	\figuremacro{H}{pairsAoutput}{Excercise 3-2}{ -  Output from the Squares system, using the \textit{GSPairsA.groovy} process.}{0.4}
+	\figuremacro{H}{pairsAoutput}{Excercise 3-2}{ -  Output from the Squares system, using the \textit{GSPairsA.groovy} process.}{0.3}
 	
 	\subsection*{GSPairsB}
 	
@@ -313,7 +314,7 @@
 	
 	\figuremacro{H}{GSquaresPN}{Exercise 3-2}{ - Process Network diagram of test system, GSPairs is replaced by GSPairsA and GSPairsB to see the effect.}{1.0}
 	
-	\textit{Determine the effect of the change between GSPairsA and GSPairsB, why does this happen?} %TODO CHECK
+	\textit{Determine the effect of the change between GSPairsA and GSPairsB, why does this happen?} 
 	
 	In running \textit{GSPairsA.groovy} the output, shown in Figure \ref{fig:pairsAoutput}, is blank after the header, whereas in running \textit{GSPairsB.groovy} the output, shown in Figure \ref{fig:pairsBoutput}, displays a heading and then a stream of square numbers. The reason for this change is due to the fact \textit{GSCopy.groovy} outputs sequentially and even though the channels are the same, the order in which they are written to is different. See Figures \ref{fig:GPairsAPN} \& \ref{fig:GPairsBPN}. In the instance using \textit{GSPairsA.groovy} the system deadlocks.\textit{GPlus.groovy} reads both inputs in parallel so cannot process the values until both channels have an input. \textit{GTail.groovy} removes the first input it is given and then outputs the remaining numbers. However \textit{GTail.groovy} cannot receive another input until channel a (the channel between \textit{GSCopy.groovy} and \textit{GPlus.groovy}) is free. The instance using \textit{GSPairsB} does not deadlock as channel b - the channel between \textit{GSCopy.groovy} and \textit{GTail.groovy} - is written to first, so will be able to receive and send the next copied value on the next iteration of the sequential copy.
 	
@@ -405,10 +406,12 @@
 	\subsection{Varying delay for RunQueue}
 	
 	\subparagraph{Questions}
-	%TODO LATER
+
 	\textit{By varying the delay times demonstrate that the system works in the manner expected. What do you conclude from these experiments?}
 	
-	Varying the delay times makes no difference to the process output, it works as expected regardless of changing the times. This happens because it uses preconditions to 
+	Varying the delay times makes no difference to the process output, it works as expected regardless of changing the times. This happens because it uses preconditions to prevent reading and overwriting when a producer sends a new integer into the Queue. The Consumer is not able to read until it is ready, but it will continue to read in a loop regardless of whether the value is NULL so no values will be missed and the output will always be the same. 
+	
+	% Consumer cannot read when it is not able so  
 	
 	
 	\subsection{Preconditions}
@@ -568,16 +571,14 @@
    
    \setcounter{subsection}{0}
    \subsection{Missed Test}
+   
+   \figuremacro{H}{evalid}{Excercise 9-1}{ -  Process network diagram for event validation system.}{1.0}
 
-   %TODO Diagram for this new process
    \subparagraph{Explanation}
-   Using the suggestion (Section 9.4.4) made earlier in the chapter, construct an additional process for the event handling system that ensures that the number of missed events is correct.  The additional process should be added to the network of processes.  You may need to modify the EventData class (Section 9.2.4) to facilitate this.
    
    In constructing a test case for the event handling system, a new \textit{EventValidation.groovy} process was implemented, see Listing \ref{lst:event}. The process was inserted into the system between the \textit{UniformDistributedDelay.groovy} and the \textit{GPrint.groovy} process.
    
-   To test if the number of missed events is correct, the previous EventData object to pass through the system is stored and updated each loop. EventData instances store the number of missed events that are printed to the console. The algorithm checks whether the missed event stored by the current EventData object is correct by checking against a calculation.
-   
-   %TODO explain calculation
+   To test if the number of missed events is correct, the previous EventData object to pass through the system is stored and updated each loop. EventData instances store the number of missed events that are printed to the console. The algorithm checks whether the missed event stored by the current EventData object is correct by checking against the calculated value, the current data minus the previous data minus 1.
    
    \subparagraph{Code} \hfill
    
@@ -622,26 +623,193 @@
    Exercise 9 2   (5.marks)
    The accompanying exercise package contains a version of the event handling system, RunMultiStream, which allows the creation of 1 to 9 event streams.  By modifying the times associated with each event generation stream and also of the processing system explore the performance of the system.  What do you conclude?
    
-
+   By altering the timings associated with the event generator, the amount of data that can be stored in the buffer can be increased. This reduces the amount of missed data. The reason that the size of the buffer is inversely proportional to the amount of missed data is that once the buffer is filled it cannot store events. Events are constantly written to the \textit{EventProcessor.groovy} regardless of whether the buffer is full. If events are generated too quickly, the  \textit{EventProcessor.groovy} process is not ready to receive all the data resulting in missed events. Evidence of this can be seen as the initial events that are generated usually pass through the system without any loss, this is because at the start of the system the buffer is empty. 
    
-   \subsection{multiplexer}
    
-   %TODO 92
-   %TODO 93
-   Exercise 9 3   (6 marks)
-   The process EventProcessing has three versions of multiplexer defined within it, two of which are commented out.  By choosing each of the options in turn, comment upon the effect that each multiplexer variation has on overall system performance.
+   \subsection{Multiplexer Variations}
    
-   	\setcounter{section}{11}
+   The process EventProcessing has three versions of multiplexer defined within it, two of which are commented out. Each process has a similar function that writes a chosen input channel to the output. The difference lies in how the input channel to be read is chosen. 
+   
+    %By choosing each of the options in turn, comment upon the effect that each multiplexer variation has on overall system performance.
+   
+   \subparagraph{FairMultiplex}
+   
+   The \textit{FairMultiplex.groovy} uses a "fair" select alternative if multiple guards are ready. Meaning that each channel in the list has an equal opportunity to be read from. This is similar to a FIFO queue system where each guard once read from is given the lowest priority - the first channel to be serviced is read initially and then added to the end of the list so it evens out the selection of each channel.
+   
+   \subparagraph{PriMultiplex}
+   
+   The \textit{PriMultiplex.groovy} uses a "priority" select alternative if multiple guards are ready. A channel's priority is determined by the order it appears within the channel list. The lower the index of the channel, the higher the priority it is given. Therefore this process reads from the channel with the lowest index of the currently ready channels.
+  
+   \subparagraph{Multiplexer}
+   
+   The \textit{Multiplexer.groovy} makes an arbitrary choice of ready guards. The arbitrary choice actually implements that of the fair select alternative, just renamed. This is misdirection, as the process itself does nothing unique and therefore can be said to be useless.  
+   
+   \subparagraph{Summary}
+   Out of each process to choose from, the \textit{FairMultiplex.groovy} seems to be the most useful. This is because for any system that requires to read from a selection of input channels, a process that doesn't favour any inputs makes more sense to use. The priority selection is useful but in a system where the lower priority channels will almost never be chosen, it could be argued that an alternative is not necessary at all. The \textit{Multiplexer.groovy} has no real use as it is just a copy of the fair select.
+   
+   \setcounter{section}{11}
    \section*{Exercise 11}
    
    \setcounter{subsection}{0}
-   
-   %TODO 11
 
-   \subsection{control}
-   Exercise 11 1   (8 marks)
-   The Control process in the Scaling system currently updates the scaling factor according to an automatic system.  Replace this with a user interface that issues the suspend communication, obtains the current scaling factor and then asks the user for the new scaling factor that is then injected into the Scaler.  The original and scaled values should also be output to the user interface.
-   Total Marks  (60)
+   \subsection{Scaling User Interface}
    
+   \subparagraph{Code} \hfill
+   \begin{lstlisting}[caption = "UserInterface.groovy"]
+   	class UserInterface implements CSProcess
+   	{
+   	
+   		// define inputs
+   		def ChannelInput toConsole
+   		def ChannelOutput fromConsole
+   		def ChannelInput clearInputArea
+   	
+   		def ChannelInput suspendButton
+   		def ChannelOutput suspend
+   	
+   		// title of console
+   		def String frameLabel = "Scaler Console"
+   	
+   		def void run()
+   		{
+   			// define UI frames		
+   			def main = new ActiveClosingFrame (frameLabel)
+   			def root = main.getActiveFrame()
+   			root.setLayout ( new BorderLayout () )
+   	
+   			// draw labels
+   			def outLabel = new Label ("Scaled Output", Label.CENTER)
+   			outLabel.setFont(new Font("sans-serif", Font.BOLD, 20))
+   			def inLabel = new Label ("Input New Scale", Label.CENTER)
+   			inLabel.setFont(new Font("sans-serif", Font.BOLD, 20))
+   	
+   			// set output here
+   			def outText = new ActiveTextArea ( toConsole, null, "", 0, 0, java.awt.TextArea.SCROLLBARS_VERTICAL_ONLY)
+   	
+   			// input from console
+   			def inText = new ActiveTextEnterField ( clearInputArea, fromConsole )
+   			
+   			// setup layout
+   			def console = new Container()
+   			console.setLayout ( new GridLayout ( 5, 1 ) )
+   			console.add ( outLabel )
+   			console.add ( outText )
+   			console.add ( inLabel )
+   			console.add ( inText.getActiveTextField() )
+   	
+   			// add button
+   			def button = new ActiveButton (suspendButton, suspend, "SUSPEND")
+   			button.setFont(new Font("sans-serif", Font.BOLD, 20))
+   			console.add(button)
+   	
+   			root.add(console, BorderLayout.CENTER )
+   			root.pack()
+   			root.setVisible(true)
+   			
+   			def interfaceProcessList = [ main, outText, inText, button ]
+   			new PAR ( interfaceProcessList ).run()
+   		}
+   	}   \end{lstlisting}
+   
+   \begin{lstlisting}[caption = "Scale.groovy"]   
+   class Scale implements CSProcess
+   {
+   		def int scaling = 2
+   		def ChannelOutput outChannel
+   		def ChannelInput inChannel
+  		def ChannelInput suspend
+   		def ChannelInput injector
+   
+  		def ChannelOutput toButton
+   		def ChannelOutput toConsole
+   
+   		void run ()
+   		{
+   			def SUSPEND  = 0
+   			def INJECT   = 1
+   			def INPUT    = 2
+   
+  	 		def normalAlt = new ALT ( [ suspend, injector, inChannel ] )
+   			def suspended = false
+   
+   			while (true) {
+   				switch ( normalAlt.priSelect() ) {
+   					case SUSPEND :
+   					
+   						//  deal with button input
+   
+   						// if suspend change button text and bool to stop scaling
+   						if (suspend.read() == "SUSPEND")
+   						{
+   							toButton.write("RESTART")
+   							outChannel.write("Suspended\n")
+   							suspended = true
+   						}
+   						else // resume, change flag and button 
+   						{
+   							toButton.write("SUSPEND")
+   							outChannel.write("Resumed\n")
+   							suspended = false
+   						}
+   						break
+   						
+   					case INJECT:
+   						//  deal with inject input from console 
+   						scaling = Integer.parseInt(injector.read() ) // try parse data
+   						outChannel.write("Injected scaling is $scaling \n")
+   
+   						// clear text field
+   						toConsole.write("")
+   
+  						// ensure scaling is resumed
+   						toButton.write("SUSPEND")
+   						suspended = false
+   						break
+   					
+   					case INPUT:
+   						//   deal with Input channel
+   
+  						// read from timed data					
+   						def inValue = inChannel.read()
+   						def result = new ScaledData()
+   						result.original = inValue
+   
+   						// flag set by UI button if suspended, don't scale
+   						if (suspended)
+   						{
+   							result.scaled = inValue
+   						}
+   						else
+   						{
+   							result.scaled = inValue * scaling
+   						}
+   
+   						outChannel.write( result )
+   						break
+   				} //end-switch
+   			} //end-while
+   		} //end-run
+   } // end Scale \end{lstlisting}
+   
+   \figuremacro{H}{UI}{Excercise 11}{ - Process network diagram for the scaler user interface system.}{1.0}
+   
+   \subparagraph{Output} \hfill
+   
+    \begin{figure*}[h]
+   	\centering
+   	\subfloat[The Suspend button has been clicked]{\includegraphics[width=2.5in]{uiSuspend}%
+   		\label{fig_first_image}}
+   	\hfil
+   	\subfloat[Numbers have been Injected using the textbox.]{\includegraphics[width=2.5in]{uiInject}%
+   		\label{fig_second_image}}
+   	\caption{Output captures from the Scaler User Interface.}
+   	\label{uiOut}
+   \end{figure*}
+
+   \subparagraph{Explanation}
+   
+   
+   
+  
 	
 \end{document}

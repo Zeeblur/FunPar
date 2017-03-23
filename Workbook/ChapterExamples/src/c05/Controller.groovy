@@ -25,7 +25,7 @@ class Controller implements CSProcess {
     while (true) {
       timeout = timeout + testInterval           // set the timeout
       timer.after ( timeout )                    // wait for the timeout
-      suspend.write (0)                          // suspend signal to ScaleInt; value irrelevant
+      //suspend.write (0)                          // suspend signal to ScaleInt; value irrelevant
       currentFactor = factor.read()              // get current scaling from ScaleInt
       currentFactor = currentFactor + addition   // compute new factor
       timer.sleep(computeInterval)               // to simulate computational time

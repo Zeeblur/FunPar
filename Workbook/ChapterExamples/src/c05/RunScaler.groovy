@@ -10,9 +10,11 @@ import org.jcsp.groovy.plugAndPlay.*
 def data = Channel.one2one()
 def timedData = Channel.one2one()
 def scaledData = Channel.one2one()
-def oldScale = Channel.one2one()
 def newScale = Channel.one2one()
 def pause = Channel.one2one() 
+
+def scale2Btn = Channel.one2one()
+def scale2Text = Channel.one2one()
 
 def network = [ new GNumbers ( outChannel: data.out() ),
                 new GFixedDelay ( delay: 1000, 
@@ -21,24 +23,17 @@ def network = [ new GNumbers ( outChannel: data.out() ),
 							  
                 new Scale ( inChannel: timedData.in(),
                             outChannel: scaledData.out(),
-                            factor: oldScale.out(),
                             suspend: pause.in(),
                             injector: newScale.in(),
-                            multiplier: 2,
-                            scaling: 2 ),
-						
-                new Controller ( testInterval: 11000,
-                		         computeInterval: 3000,
-                		         addition: -1,
-                                 factor: oldScale.in(),
-                                 suspend: pause.out(),
-                                 injector: newScale.out() ),
-							 
-               // new GPrint ( inChannel: scaledData.in(),
-               // 		     heading: "Original      Scaled",
-                //		     delay: 0),
+                            scaling: 2,
+							toButton: scale2Btn.out(),
+							toConsole: scale2Text.out() ),
 				
-				new UserInterface(toConsole: scaledData.in()) //toConsole: timedData.in())
+				new UserInterface(toConsole: scaledData.in(),
+								  suspendButton: scale2Btn.in(),
+								  suspend: pause.out(),
+								  fromConsole: newScale.out(),
+								  clearInputArea: scale2Text.in())
 			   
               ]
 
