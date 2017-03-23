@@ -25,5 +25,6 @@ class RunThreeToEightTest extends GroovyTestCase {
 		println "exp ${expectedList} + act ${actualList}"
 		
 		assertTrue(expectedList == actualList)
+		assertTrue(eight.outList.size() == 8)
 	}
 }

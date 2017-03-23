@@ -7,7 +7,7 @@ class ListToStream implements CSProcess{
 	def ChannelInput inChannel
 	def ChannelOutput outChannel
 	
-	def inTest = [8]
+	def inTest = []
 	
 	void run (){
 		def inList = inChannel.read()
@@ -17,7 +17,7 @@ class ListToStream implements CSProcess{
 			{
 				outChannel.write(inList[i])
 				
-				inTest[i] = (inList[i])
+				inTest = inTest << inList[i]
 			}
 			inList = inChannel.read()
 		}

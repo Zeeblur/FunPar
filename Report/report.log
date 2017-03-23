@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.12)  21 MAR 2017 00:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.12)  23 MAR 2017 03:35
 entering extended mode
 **./report.tex
 (report.tex
@@ -746,68 +746,95 @@ Package pdftex.def Info: ./images/resetNum.png used on input line 340.
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.362 ...isting}[caption = "ResetSucessor.groovy"]
-                                                   <./images/resetNum.png>]
-[8] [9] <./images/deadlock.png, id=365, 248.72925pt x 192.72pt>
+l.351 
+       <./images/resetNum.png>]
+<./images/resetPre.png, id=262, 536.0025pt x 151.56625pt>
+File: ./images/resetPre.png Graphic file (type png)
+
+<use ./images/resetPre.png>
+Package pdftex.def Info: ./images/resetPre.png used on input line 352.
+(pdftex.def)             Requested size: 358.50317pt x 101.37308pt.
+ [8pdfTeX warning (ext4): destination with the same identifier (name{figure.14}
+) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.414 	\subsection{Preconditions}
+                                  <./images/resetPre.png>] [9]
+<./images/unitTest.png, id=353, 298.11375pt x 122.25674pt>
+File: ./images/unitTest.png Graphic file (type png)
+
+<use ./images/unitTest.png>
+Package pdftex.def Info: ./images/unitTest.png used on input line 504.
+(pdftex.def)             Requested size: 358.50317pt x 147.03194pt.
+
+<./images/deadlock.png, id=355, 248.72925pt x 192.72pt>
 File: ./images/deadlock.png Graphic file (type png)
 
 <use ./images/deadlock.png>
-Package pdftex.def Info: ./images/deadlock.png used on input line 515.
+Package pdftex.def Info: ./images/deadlock.png used on input line 522.
 (pdftex.def)             Requested size: 256.07481pt x 198.41852pt.
- [10pdfTeX warning (ext4): destination with the same identifier (name{figure.14
+ [10pdfTeX warning (ext4): destination with the same identifier (name{figure.15
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.556  
-         			println "test passed" <./images/deadlock.png>]
-<./images/testClient.png, id=392, 142.73325pt x 61.4295pt>
+l.523 
+       <./images/unitTest.png>]
+<./images/testClient.png, id=381, 142.73325pt x 61.4295pt>
 File: ./images/testClient.png Graphic file (type png)
 
 <use ./images/testClient.png>
-Package pdftex.def Info: ./images/testClient.png used on input line 563.
+Package pdftex.def Info: ./images/testClient.png used on input line 560.
 (pdftex.def)             Requested size: 153.64644pt x 66.13194pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 593.
- [11pdfTeX warning (ext4): destination with the same identifier (name{figure.15
+ [11pdfTeX warning (ext4): destination with the same identifier (name{figure.16
 }) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.593 \end{document}
-                     <./images/testClient.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 593.
+l.565 
+      pdfTeX warning (ext4): destination with the same identifier (name{figure.
+17}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.565 
+       <./images/deadlock.png> <./images/testClient.png>] [12]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 712.
+ [13]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 712.
  (report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 593.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 593.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 712.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 712.
 Package rerunfilecheck Info: File `report.out' has not changed.
-(rerunfilecheck)             Checksum: 253EB05B312C3A2FAE527C1F043C4EA4;903.
+(rerunfilecheck)             Checksum: C308F0FC2C16402304B458052F39FA34;932.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.75pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 593.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 712.
  )
 (\end occurred inside a group at level 1)
 
 ### simple group (level 1) entered at line 1061 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 10667 strings out of 493333
- 152307 string characters out of 3139191
- 575274 words of memory out of 3000000
- 13759 multiletter control sequences out of 15000+200000
+ 10747 strings out of 493333
+ 153530 string characters out of 3139191
+ 532274 words of memory out of 3000000
+ 13794 multiletter control sequences out of 15000+200000
  32769 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 33i,8n,58p,1246b,3755s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 33i,8n,58p,1246b,3733s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<D:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Program Fil
 es/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><D:/Program Files/MiKTeX 2.9/
 fonts/type1/urw/helvetic/uhvr8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/ur
 w/helvetic/uhvro8a.pfb>
-Output written on report.pdf (11 pages, 229895 bytes).
+Output written on report.pdf (13 pages, 232590 bytes).
 PDF statistics:
- 479 PDF objects out of 1000 (max. 8388607)
- 281 named destinations out of 1000 (max. 500000)
- 204 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 544 PDF objects out of 1000 (max. 8388607)
+ 324 named destinations out of 1000 (max. 500000)
+ 214 words of extra memory for PDF output out of 10000 (max. 10000000)
 

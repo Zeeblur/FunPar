@@ -23,7 +23,7 @@ class ResetSuccessor implements CSProcess {
 		if (index == 0)
 		{
 			def value = resetChannel.read()
-			inChannel.read()
+		//	inChannel.read()
 			outChannel.write(value)
 		}
 		else

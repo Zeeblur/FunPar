@@ -10,6 +10,9 @@ import org.jcsp.groovy.plugAndPlay.*
 def eg2h = Channel.one2one()
 def h2udd = Channel.one2one()
 def udd2prn = Channel.one2one()
+
+def valid2prn = Channel.one2one()
+
 def eventTestList = [ 
       new EventGenerator ( source: 1, 
                            initialValue: 100, 
@@ -26,7 +29,9 @@ def eventTestList = [
                                       minTime: 1000, 
                                       maxTime: 2000 ), 
 								  
-      new GPrint ( inChannel: udd2prn.in(),
+	  new EventValidation (inChannel: udd2prn.in(), outChannel: valid2prn.out()),
+								  
+      new GPrint ( inChannel: valid2prn.in() ,
     		        heading : "Event Output",
     		        delay: 0)
       ]

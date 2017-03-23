@@ -317,11 +317,11 @@
 	
 	In running \textit{GSPairsA.groovy} the output, shown in Figure \ref{fig:pairsAoutput}, is blank after the header, whereas in running \textit{GSPairsB.groovy} the output, shown in Figure \ref{fig:pairsBoutput}, displays a heading and then a stream of square numbers. The reason for this change is due to the fact \textit{GSCopy.groovy} outputs sequentially and even though the channels are the same, the order in which they are written to is different. See Figures \ref{fig:GPairsAPN} \& \ref{fig:GPairsBPN}. In the instance using \textit{GSPairsA.groovy} the system deadlocks.\textit{GPlus.groovy} reads both inputs in parallel so cannot process the values until both channels have an input. \textit{GTail.groovy} removes the first input it is given and then outputs the remaining numbers. However \textit{GTail.groovy} cannot receive another input until channel a (the channel between \textit{GSCopy.groovy} and \textit{GPlus.groovy}) is free. The instance using \textit{GSPairsB} does not deadlock as channel b - the channel between \textit{GSCopy.groovy} and \textit{GTail.groovy} - is written to first, so will be able to receive and send the next copied value on the next iteration of the sequential copy.
 	
-	\subsection{GParPrint}
+	\subsection{Parallel Print}
 	
-	%TODO ANSWER
-	   Exercise 3 3   (2 marks)
-	Why was it considered easier to build GParPrint as a new process rather than using multiple instances of GPrint to output the table of results?
+	\subparagraph{Questions} \hfill
+	
+	\textit{Why was it considered easier to build GParPrint as a new process rather than using multiple instances of GPrint to output the table of results?}
 	
 	It is easier to build a parallel printing process rather than using multiple instances of \textit{GPrint} as it allows for printing results from multiple processes at once. It also allows for %reuse/more processes etc 
 	However as a parallel print needs to wait for every input process to return a value to print, it means that it can only output as fast as the slowest process. Therefore it would only be easier to use if the processes to print output at a regular rate.
@@ -343,15 +343,13 @@
 	
 	\textit{What happens if line {25} of ResetPrefix Listing 4-1 is commented out? Why?}
 	
-	When the read line is removed the output alternates between the incrementing reset value and the original numbers. This is because
-	the original value is not removed from the system if the channel is not read from.
+	When the read line is removed the output alternates between the incrementing reset value and the original numbers as seen in figure \ref{fig:resetNum}. This is because the original value is not removed from the system if the channel is not read from.
 		
 	\textit{Explore what happens if you try to send several reset values hence, explain what happens and provide a reason for this.}
 	
-	%TODO add diagram here to explain dlock
+	When you try to send several reset values at once deadlock occurs. This is due to the first number not being removed from channel c, shown in figure \ref{fig:resetPre}, and therefore the processes cannot read additional inputs from the resetChannel as there is no way for \textit{GPCopy.groovy} to output in parallel until the channel is cleared.
 	
-	%TODO answer
-	dlock
+	\figuremacro{H}{resetPre}{Exercise 4-1}{ - Process network diagram for \textit{ResetNumbers.groovy}}{0.7}
 	
 	\subsection{ResetSucessor process}
 
@@ -369,7 +367,7 @@
 		if (index == 0) 		// reset Channel input
 		{
 			def resetVal = resetChannel.read()
-			inChannel.read()
+//			inChannel.read()
 			outChannel.write(resetVal)
 		}
 		else						// outChannel input
@@ -392,26 +390,24 @@
 			resetChannel: resetChannel )
 	]	\end{lstlisting}
 	
-	\subparagraph{Diagram}
-	%TODO diagram for reset numbers to ResetSuccessor
-	
-	\subparagraph{Output}
-	
 	\subparagraph{Question}
-	\hfill
-	\textit{Does it overcome the problem identified in Exercise 1? If not, why not?}
-	%No, the same problem persists as it is still possible to inject more values than the system can handle.	Without the reading and removing the integers from the channels as needed, there is no way to force the
 	
-	system to behave as intended.
-
+	\hfill
+	
+	\textit{Does it overcome the problem identified in Exercise 1? If not, why not?}
+	
+	No, the reformulation does not overcome the problem as it is still is possible for the user to input multiple values, deadlocking the system. There is no way to reformulate this example without reading from the channel as the integers are never removed from the system.
+	
 	\setcounter{section}{5}
 	\section*{Exercise 5}
 	
 	\setcounter{subsection}{0}
 	\subsection{Varying delay for RunQueue}
 	
-	   The accompanying web site contains a script, called RunQueue, in package ChapterExercises/src/c5 to run the queue network.  The delays associated with QProducer and QConsumer can be modified.  By varying the delay times demonstrate that the system works in the manner expected.  Correct operation can be determined by the QConsumer process outputting the messages “QConsumer has read 1” to “QConsumer has read 50” in sequence.  What do you conclude from these experiments?
-	5.1 
+	\subparagraph{Questions}
+	%TODO LATER
+	\textit{By varying the delay times demonstrate that the system works in the manner expected. What do you conclude from these experiments?}
+	
 	Varying the delay times makes no difference to the process output, it works as expected regardless of changing the times. This happens because it uses preconditions to 
 	
 	
@@ -463,9 +459,10 @@
 	} //end-while		\end{lstlisting}
 	
 	\subparagraph{Questions} \hfill
-      Reformulate the scaling device so that it uses pre-conditions rather than nested alternatives.  Which is the more elegant formulation? Why?
+	
+	\textit{Which is the more elegant formulation? Why?}
    
-   The latter is the more elegant solution because it avoids nested loops. 
+   The latter, using preconditions, is the more elegant solution because it avoids nested loops. Using only one switch statement and alternative makes the code more readable and possibly could increase performance due to a decrease in conditional loops.
    
    	\setcounter{section}{6}
    \section*{Exercise 6}
@@ -497,41 +494,38 @@
    			println "exp ${expectedList} + act ${actualList}"
    
    			assertTrue(expectedList == actualList)
+   			
+   			assertTrue(eight.outList.size() == 8)
    		}
    }   \end{lstlisting}
    
    \subparagraph{Output}
-   %TODO add screencap
+   
+   \figuremacro{H}{unitTest}{Exercise 6-1}{ - Screen capture of the results of the JUnit test performed.}{0.7}
+   
+   \subparagraph{Explanation}
+   
+   The performed JUnit test shown above adds each integer from the \textit{ListToStream.groovy} process in turn and checks it against the output from \textit{CreateSetsOfEight.groovy} to check if the values are correctly being processed through the system. It also checks that the set returned from the \textit{CreateSetsOfEight.groovy} process correctly contains 8 integers.
    
    	\setcounter{section}{7}
-	\section*{Exercise 7}
-	
+	\section*{Exercise 7}	
 	
 	\setcounter{subsection}{0}
-	\subsection{dead case}
-	   Exercise 7 1   (5 marks)
-	By placing print statements in the coding for the Server and Client processes see if you can determine the precise nature of the deadlock in the Client Server system.  You will probably find it useful to add a property to the Server process by which you can identify each Server. 
+	\subsection{Deadlock}
+
+    \textit{Determine the precise nature of the deadlock in the Client Server system.}
+    
+    By adding a parameter to identify each server you can see from the output of the program, figure \ref{fig:deadlock}, that both servers request values from each other at the same time which is the cause of the deadlock in the system. Neither process can send a response as they first are expecting a response for their own request and therefore cannot continue.
 	
-	\subparagraph{Output}
-	
-			
-	\figuremacro{H}{deadlock}{Excercise 7-1}{ -  Output from the Server Client process}{0.5}
-	
-	As you can see from the output of the program, 
-	both servers request values from eachother that causes the deadlock, 
-	
-	
-	
+	\subparagraph{Output} \hfill
+				
+	\figuremacro{H}{deadlock}{Exercise 7-1}{ -  Output from the Server Client process, deadlock occurs as each server requests a response from the other.}{0.5}
 	
 	\setcounter{section}{8}
    \section*{Exercise 8}
    
    \setcounter{subsection}{0}
-   \subsection{test case}
-
-   Exercise 8 1   ( 4 marks)
-   Modify the Client process c07.Client so that it can ensure that the values returned from the Server arrive in the order expected according to their selectList property.  It should print a suitable message that the test has been undertaken and whether it passed or failed.  You are not to use the GroovyTestCase mechanism because this would require that the CSMux and Server processes would have to terminate, which would require a lot of unnecessary programming.  
-   
+   \subsection{Test Case for Client Server System}
    \subparagraph{Code} \hfill
    \begin{lstlisting} [caption = "Client.groovy"]
    	void run()
@@ -565,20 +559,75 @@
    
   	\figuremacro{H}{testClient}{Excercise 8-1}{ -  Output from the Server Client test.}{0.3}
    
+   \subparagraph{Explanation}
+   
+   To ensure that the values returned from the Server arrive in the order expected according to their selectList property, a list was created to store the actual output from the server. The selectList was then iterated through multiplying each value by ten and storing the result into a separate list. These lists were compared to test the system.
+   
    \setcounter{section}{9}
    \section*{Exercise 9}
    
    \setcounter{subsection}{0}
-   \subsection{missed test}
-   
-   Exercise 9 1   ( 5 marks)
+   \subsection{Missed Test}
+
+   %TODO Diagram for this new process
+   \subparagraph{Explanation}
    Using the suggestion (Section 9.4.4) made earlier in the chapter, construct an additional process for the event handling system that ensures that the number of missed events is correct.  The additional process should be added to the network of processes.  You may need to modify the EventData class (Section 9.2.4) to facilitate this.
    
+   In constructing a test case for the event handling system, a new \textit{EventValidation.groovy} process was implemented, see Listing \ref{lst:event}. The process was inserted into the system between the \textit{UniformDistributedDelay.groovy} and the \textit{GPrint.groovy} process.
+   
+   To test if the number of missed events is correct, the previous EventData object to pass through the system is stored and updated each loop. EventData instances store the number of missed events that are printed to the console. The algorithm checks whether the missed event stored by the current EventData object is correct by checking against a calculation.
+   
+   %TODO explain calculation
+   
+   \subparagraph{Code} \hfill
+   
+   \begin{lstlisting}[caption = "EventValidation.groovy" \label{lst:event}]
+   class EventValidation implements CSProcess
+   {
+   	  	def ChannelInput inChannel
+      	def ChannelOutput outChannel
+      	def EventData previous
+   
+   	  	void run()
+   	  	{
+   	    	while (true)
+   		 	{
+   				// read in current event data
+ 				def currentEvent = (EventData)inChannel.read()
+   
+   				// previous is null for first event
+   				if (previous != null)
+   	 			{
+   
+   		 			def actualMissed = currentEvent.data - previous.data - 1
+   
+   					// check if current missed event value is the same as the calculated missed value
+	   				if (currentEvent.missed != actualMissed)
+   					{
+   						println "Error: Missed count inaccurate.\n"
+   							+"Event data: $currentEvent.data missed count = $currentEvent.missed, should be $actualMissed"
+   					}
+   				}
+   
+   				// send along to GPrint and set new previous event
+   				outChannel.write(currentEvent)
+   				previous = currentEvent	
+   								
+  			} // end while
+   
+   		}
+   
+   }   \end{lstlisting}
    \subsection{MultiStream}
    Exercise 9 2   (5.marks)
    The accompanying exercise package contains a version of the event handling system, RunMultiStream, which allows the creation of 1 to 9 event streams.  By modifying the times associated with each event generation stream and also of the processing system explore the performance of the system.  What do you conclude?
    
+
+   
    \subsection{multiplexer}
+   
+   %TODO 92
+   %TODO 93
    Exercise 9 3   (6 marks)
    The process EventProcessing has three versions of multiplexer defined within it, two of which are commented out.  By choosing each of the options in turn, comment upon the effect that each multiplexer variation has on overall system performance.
    
@@ -586,6 +635,8 @@
    \section*{Exercise 11}
    
    \setcounter{subsection}{0}
+   
+   %TODO 11
 
    \subsection{control}
    Exercise 11 1   (8 marks)
