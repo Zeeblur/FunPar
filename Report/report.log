@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.12)  23 MAR 2017 14:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.2.12)  23 MAR 2017 15:06
 entering extended mode
 **./report.tex
 (report.tex
@@ -742,36 +742,36 @@ File: ./images/evalid.png Graphic file (type png)
 Package pdftex.def Info: ./images/evalid.png used on input line 575.
 (pdftex.def)             Requested size: 512.14963pt x 158.94734pt.
  [12 <./images/evalid.png>] [13] [14]
-<./images/UI.png, id=561, 723.70375pt x 115.43124pt>
+<./images/UI.png, id=565, 723.70375pt x 115.43124pt>
 File: ./images/UI.png Graphic file (type png)
  <use ./images/UI.png>
 Package pdftex.def Info: ./images/UI.png used on input line 794.
 (pdftex.def)             Requested size: 512.14963pt x 81.68903pt.
 
-<./images/uiSuspend.png, id=562, 263.7855pt x 532.389pt>
+<./images/uiSuspend.png, id=566, 263.7855pt x 532.389pt>
 File: ./images/uiSuspend.png Graphic file (type png)
 
 <use ./images/uiSuspend.png>
-Package pdftex.def Info: ./images/uiSuspend.png used on input line 801.
+Package pdftex.def Info: ./images/uiSuspend.png used on input line 799.
 (pdftex.def)             Requested size: 180.67499pt x 364.65176pt.
 
-<./images/uiInject.png, id=563, 261.3765pt x 531.78674pt>
+<./images/uiInject.png, id=567, 261.3765pt x 531.78674pt>
 File: ./images/uiInject.png Graphic file (type png)
 
 <use ./images/uiInject.png>
-Package pdftex.def Info: ./images/uiInject.png used on input line 804.
+Package pdftex.def Info: ./images/uiInject.png used on input line 802.
 (pdftex.def)             Requested size: 180.67499pt x 367.59052pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 815.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 813.
 [15 <./images/UI.png>] [16 <./images/uiSuspend.png> <./images/uiInject.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 815.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 813.
 
 (report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 815.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 815.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 813.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 813.
 Package rerunfilecheck Info: File `report.out' has not changed.
 (rerunfilecheck)             Checksum: 213E0D7A761381CE5AB93497B96C9008;958.
 
@@ -779,7 +779,7 @@ Package rerunfilecheck Info: File `report.out' has not changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.75pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 815.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 813.
  )
 (\end occurred inside a group at level 1)
 
@@ -788,7 +788,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 815.
 Here is how much of TeX's memory you used:
  12180 strings out of 493333
  178773 string characters out of 3139191
- 725545 words of memory out of 3000000
+ 723532 words of memory out of 3000000
  15070 multiletter control sequences out of 15000+200000
  35659 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -798,9 +798,9 @@ ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><D:/Program Fil
 es/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><D:/Program Files/MiKTeX 2.9/
 fonts/type1/urw/helvetic/uhvr8a.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/ur
 w/helvetic/uhvro8a.pfb>
-Output written on report.pdf (16 pages, 339379 bytes).
+Output written on report.pdf (16 pages, 288779 bytes).
 PDF statistics:
- 732 PDF objects out of 1000 (max. 8388607)
+ 733 PDF objects out of 1000 (max. 8388607)
  466 named destinations out of 1000 (max. 500000)
  234 words of extra memory for PDF output out of 10000 (max. 10000000)
 

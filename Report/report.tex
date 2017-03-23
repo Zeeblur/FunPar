@@ -1,5 +1,5 @@
 \def\mytitle{Workbook}
-\def\myauthor{REQUIREMENT 4}
+\def\myauthor{}
 \def\contact{40182161}
 \def\mymodule{Fundamentals of Parallel Systems (SET09109)}
 
@@ -620,8 +620,8 @@
    
    }   \end{lstlisting}
    \subsection{MultiStream}
-   Exercise 9 2   (5.marks)
-   The accompanying exercise package contains a version of the event handling system, RunMultiStream, which allows the creation of 1 to 9 event streams.  By modifying the times associated with each event generation stream and also of the processing system explore the performance of the system.  What do you conclude?
+
+   What do you conclude?
    
    By altering the timings associated with the event generator, the amount of data that can be stored in the buffer can be increased. This reduces the amount of missed data. The reason that the size of the buffer is inversely proportional to the amount of missed data is that once the buffer is filled it cannot store events. Events are constantly written to the \textit{EventProcessor.groovy} regardless of whether the buffer is full. If events are generated too quickly, the  \textit{EventProcessor.groovy} process is not ready to receive all the data resulting in missed events. Evidence of this can be seen as the initial events that are generated usually pass through the system without any loss, this is because at the start of the system the buffer is empty. 
    
@@ -793,8 +793,6 @@
    
    \figuremacro{H}{UI}{Excercise 11}{ - Process network diagram for the scaler user interface system.}{1.0}
    
-   \subparagraph{Output} \hfill
-   
     \begin{figure*}[h]
    	\centering
    	\subfloat[The Suspend button has been clicked]{\includegraphics[width=2.5in]{uiSuspend}%
@@ -806,9 +804,9 @@
    	\label{uiOut}
    \end{figure*}
 
-   \subparagraph{Explanation}
+   \subparagraph{Explanation} \hfill
    
-   
+   To implement the user interface, \textit{GConsole.groovy} was modified. In doing so, it removed the need for the controller process and the channels were redirected to the \textit{UserInterface.groovy} process as seen in figure \ref{fig:UI}. \textit{Scale.groovy} was also heavily modified to allow for the user to input values to inject into the system and for the button to suspend and resume scaling.
    
   
 	
